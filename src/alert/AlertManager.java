@@ -23,9 +23,9 @@ public class AlertManager {
         alertHandlers.add(alertHandler);
     }
 
-    public void applyDiscounts(Basket basket){
+    public void alerts(Basket basket){
         for(AlertHandler handler : alertHandlers){
-            handler.applyDiscount(basket);
+            handler.isMeetingAlertRequirements(basket);
         }
     }
 }
