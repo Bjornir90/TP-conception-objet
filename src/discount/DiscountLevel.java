@@ -1,4 +1,4 @@
-package alert;
+package discount;
 
 public enum DiscountLevel {
     MEMBER,
