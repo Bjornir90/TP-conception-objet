@@ -31,4 +31,13 @@ public class Item {
     public void applyFlatDiscount(float discount){
         applicablePrice -= discount;
     }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "product=" + product +
+                ", quantity=" + quantity +
+                ", applicablePrice=" + applicablePrice +
+                "}\n";
+    }
 }
