@@ -9,6 +9,6 @@ public final class Guest extends Client {
 		addDiscountLevel(DiscountLevel.GUEST);
 	}
 
-	
+
 
 }

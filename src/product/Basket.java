@@ -3,6 +3,7 @@ package product;
 import alert.AlertManager;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Basket {
     private ArrayList<Item> items;
@@ -21,6 +22,10 @@ public class Basket {
 
     public void addItem(Item i){
         items.add(i);
+    }
+
+    public Iterator<Item> getItemIterator(){
+        return items.iterator();
     }
 
     @Override

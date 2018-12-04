@@ -32,6 +32,18 @@ public class Item {
         applicablePrice -= discount;
     }
 
+    public Product getProduct() {
+        return product;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public float getApplicablePrice() {
+        return applicablePrice;
+    }
+
     @Override
     public String toString() {
         return "Item{" +

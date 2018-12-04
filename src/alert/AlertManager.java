@@ -5,7 +5,7 @@ import product.Basket;
 import java.util.ArrayList;
 
 public class AlertManager {
-    private ArrayList<AlertHandler> alertHandlers;
+    private ArrayList<AlertHandlerStrategy> alertHandlerStrategies;
     private static AlertManager instance;
 
     public static AlertManager getInstance() {
@@ -16,15 +16,15 @@ public class AlertManager {
     }
 
     public AlertManager() {
-        alertHandlers = new ArrayList<>();
+        alertHandlerStrategies = new ArrayList<>();
     }
 
-    public void addAlertHandler(AlertHandler alertHandler){
-        alertHandlers.add(alertHandler);
+    public void addAlertHandler(AlertHandlerStrategy alertHandlerStrategy){
+        alertHandlerStrategies.add(alertHandlerStrategy);
     }
 
     public void alerts(Basket basket){
-        for(AlertHandler handler : alertHandlers){
+        for(AlertHandlerStrategy handler : alertHandlerStrategies){
             handler.isMeetingAlertRequirements(basket);
         }
     }
