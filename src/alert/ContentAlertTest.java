@@ -10,13 +10,13 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ProductAlertTest {
+class ContentAlertTest {
 
 	Basket b;
 	ArrayList<Product> products;
 	ArrayList<Integer> quantities;
 	Item i1, i2, i3;
-	ProductAlert singleProduct, multipleProduct;
+	ContentAlert<Product> singleProduct, multipleProduct;
 
 	@BeforeEach
 	void setUp() {
@@ -38,16 +38,16 @@ class ProductAlertTest {
 		quantities.add(1);
 		b.addItem(i1);
 		b.addItem(i3);
-		singleProduct = new ProductAlert();
-		singleProduct.addProductRequirement(p1, 3);
-		multipleProduct = new ProductAlert();
+		singleProduct = new ContentAlert<>();
+		singleProduct.addContentRequirement(p1, 3);
+		multipleProduct = new ContentAlert<>();
 	}
 
 	@Test
 	void addProductRequirements() {
-		multipleProduct.addProductRequirements(products, quantities);
+		multipleProduct.addContentRequirements(products, quantities);
 		assertTrue(multipleProduct.isMeetingAlertRequirements(b));
-		multipleProduct.addProductRequirements(products, quantities);
+		multipleProduct.addContentRequirements(products, quantities);
 		assertFalse(multipleProduct.isMeetingAlertRequirements(b));
 	}
 
@@ -55,14 +55,14 @@ class ProductAlertTest {
 	void isMeetingAlertRequirements() {
 		assertTrue(singleProduct.isMeetingAlertRequirements(b));
 		assertTrue(multipleProduct.isMeetingAlertRequirements(b));
-		multipleProduct.addProductRequirements(products, quantities);
+		multipleProduct.addContentRequirements(products, quantities);
 		assertTrue(multipleProduct.isMeetingAlertRequirements(b));
-		multipleProduct.addProductRequirement(i1.getProduct(), 3);
+		multipleProduct.addContentRequirement(i1.getProduct(), 3);
 		assertFalse(multipleProduct.isMeetingAlertRequirements(b));
-		multipleProduct.addProductRequirement(i3.getProduct(), 45);
+		multipleProduct.addContentRequirement(i3.getProduct(), 45);
 		assertFalse(multipleProduct.isMeetingAlertRequirements(b));
-		ProductAlert productNotPresent = new ProductAlert();
-		productNotPresent.addProductRequirement(i2.getProduct(), 1);
+		ContentAlert productNotPresent = new ContentAlert();
+		productNotPresent.addContentRequirement(i2.getProduct(), 1);
 		assertFalse(productNotPresent.isMeetingAlertRequirements(b));
 	}
 }
