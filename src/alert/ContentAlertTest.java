@@ -3,6 +3,7 @@ package alert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import product.Basket;
+import product.Category;
 import product.Item;
 import product.Product;
 
@@ -17,6 +18,7 @@ class ContentAlertTest {
 	ArrayList<Integer> quantities;
 	Item i1, i2, i3;
 	ContentAlert<Product> singleProduct, multipleProduct;
+	ContentAlert<Category> singleCategory, multipleCategories;
 
 	@BeforeEach
 	void setUp() {
@@ -26,6 +28,13 @@ class ContentAlertTest {
 		Product p1 = new Product(10, "Cahier");
 		Product p2 = new Product(1.5f, "Stylo");
 		Product p3 = new Product(249.99f, "Mémoire");
+		Product p4 = new Product(35, "Sac");
+		Category c1 = new Category();
+		Category c2 = new Category();
+		c1.addProductToCategory(p1);
+		c1.addProductToCategory(p3);
+		c2.addProductToCategory(p1);
+		c2.addProductToCategory(p4);
 		i1 = new Item(p1);
 		i1.setQuantity(4);
 		i2 = new Item(p2);
@@ -41,6 +50,11 @@ class ContentAlertTest {
 		singleProduct = new ContentAlert<>();
 		singleProduct.addContentRequirement(p1, 3);
 		multipleProduct = new ContentAlert<>();
+		singleCategory = new ContentAlert<>();
+		multipleCategories = new ContentAlert<>();
+		singleCategory.addContentRequirement(c1, 5);
+		multipleCategories.addContentRequirement(c1, 4);
+		multipleCategories.addContentRequirement(c2, 6);
 	}
 
 	@Test
@@ -64,5 +78,8 @@ class ContentAlertTest {
 		ContentAlert productNotPresent = new ContentAlert();
 		productNotPresent.addContentRequirement(i2.getProduct(), 1);
 		assertFalse(productNotPresent.isMeetingAlertRequirements(b));
+
+		assertTrue(singleCategory.isMeetingAlertRequirements(b));
+		assertFalse(multipleCategories.isMeetingAlertRequirements(b));
 	}
 }
