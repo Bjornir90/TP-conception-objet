@@ -1,7 +1,9 @@
 package discount;
 
-public class Sale {
+import product.Basket;
+
+public abstract class Sale {
 	private DiscountLevel discountLevel;
 
-
+	public abstract void applyDiscount(Basket b);
 }

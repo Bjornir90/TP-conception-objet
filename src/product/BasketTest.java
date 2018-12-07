@@ -24,12 +24,12 @@ class BasketTest {
 
 	@org.junit.jupiter.api.Test
 	void calculatePrice() {
-		assertEquals(0.0f, basket.calculatePrice());
+		assertEquals(0.0f, basket.calculateBasePrice());
 		basket.addItem(i1);
-		assertEquals(10*4, basket.calculatePrice());
+		assertEquals(10*4, basket.calculateBasePrice());
 		basket.addItem(i2);
-		assertEquals(10*4+1.5f*10, basket.calculatePrice());
+		assertEquals(10*4+1.5f*10, basket.calculateBasePrice());
 		basket.addItem(i3);
-		assertEquals(10*4+1.5f*10+249.99f, basket.calculatePrice());
+		assertEquals(10*4+1.5f*10+249.99f, basket.calculateBasePrice());
 	}
 }
