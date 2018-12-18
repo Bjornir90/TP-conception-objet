@@ -3,10 +3,12 @@ package product;
 public class Product implements Alertable{
     private float basePrice;
     private String name;
+    private int fidelityPoints;
 
-    public Product(float basePrice, String name) {
+    public Product(float basePrice, String name, int fidelityPoints) {
         this.basePrice = basePrice;
         this.name = name;
+        this.fidelityPoints = fidelityPoints;
     }
 
     public float getBasePrice() {
@@ -32,6 +34,10 @@ public class Product implements Alertable{
     @Override
     public String printableName() {
         return name;
+    }
+
+    public int getFidelityPoints() {
+        return fidelityPoints;
     }
 
     @Override

@@ -25,10 +25,10 @@ class ContentAlertTest {
 		b = new Basket();
 		products = new ArrayList<>();
 		quantities = new ArrayList<>();
-		Product p1 = new Product(10, "Cahier");
-		Product p2 = new Product(1.5f, "Stylo");
-		Product p3 = new Product(249.99f, "Mémoire");
-		Product p4 = new Product(35, "Sac");
+		Product p1 = new Product(10, "Cahier", 5);
+		Product p2 = new Product(1.5f, "Stylo", 1);
+		Product p3 = new Product(249.99f, "Mémoire", 60);
+		Product p4 = new Product(35, "Sac", 20);
 		Category c1 = new Category("Papier");
 		Category c2 = new Category("Scolaire");
 		c1.addProductToCategory(p1);
