@@ -11,8 +11,8 @@ public abstract class Client {
 		eligibleDiscountLevel = new ArrayList<>();
 	}
 
-	public ArrayList<DiscountLevel> getEligibleDiscount(){
-		return (ArrayList<DiscountLevel>) eligibleDiscountLevel.clone();
+	public boolean isEligibleForDiscountLevel(DiscountLevel lvl) {
+		return eligibleDiscountLevel.contains(lvl);
 	}
 
 	protected void addDiscountLevel(DiscountLevel level){

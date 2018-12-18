@@ -29,6 +29,11 @@ public class SaleManager {
 		basketDiscounts.add(sale);
 	}
 
+	public void applyAllDiscounts(Basket basket) {
+		applyAllItemsDiscounts(basket);
+		applyAllBasketDiscounts(basket);
+	}
+
 	public void applyAllItemsDiscounts(Basket basket){
 		for(Sale s : itemDiscounts){
 			s.applyDiscount(basket);

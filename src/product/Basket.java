@@ -1,6 +1,7 @@
 package product;
 
 import alert.AlertManager;
+import customer.User;
 import discount.SaleManager;
 
 import java.util.ArrayList;
@@ -9,6 +10,7 @@ import java.util.Iterator;
 public class Basket {
     private ArrayList<Item> items;
     private float applicablePrice;
+    public User user;
 
     public Basket() {
         items = new ArrayList<>();
