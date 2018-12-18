@@ -29,8 +29,8 @@ class ContentAlertTest {
 		Product p2 = new Product(1.5f, "Stylo");
 		Product p3 = new Product(249.99f, "Mémoire");
 		Product p4 = new Product(35, "Sac");
-		Category c1 = new Category();
-		Category c2 = new Category();
+		Category c1 = new Category("Papier");
+		Category c2 = new Category("Scolaire");
 		c1.addProductToCategory(p1);
 		c1.addProductToCategory(p3);
 		c2.addProductToCategory(p1);

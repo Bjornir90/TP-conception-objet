@@ -30,6 +30,11 @@ public class Product implements Alertable{
     }
 
     @Override
+    public String printableName() {
+        return name;
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || !(o instanceof Product) ) return false;
