@@ -60,26 +60,26 @@ class ContentAlertTest {
 	@Test
 	void addProductRequirements() {
 		multipleProduct.addContentRequirements(products, quantities);
-		assertTrue(multipleProduct.isMeetingAlertRequirements(b));
+		assertTrue(multipleProduct.checkAlertConditions(b));
 		multipleProduct.addContentRequirements(products, quantities);
-		assertFalse(multipleProduct.isMeetingAlertRequirements(b));
+		assertFalse(multipleProduct.checkAlertConditions(b));
 	}
 
 	@Test
 	void isMeetingAlertRequirements() {
-		assertTrue(singleProduct.isMeetingAlertRequirements(b));
-		assertTrue(multipleProduct.isMeetingAlertRequirements(b));
+		assertTrue(singleProduct.checkAlertConditions(b));
+		assertTrue(multipleProduct.checkAlertConditions(b));
 		multipleProduct.addContentRequirements(products, quantities);
-		assertTrue(multipleProduct.isMeetingAlertRequirements(b));
+		assertTrue(multipleProduct.checkAlertConditions(b));
 		multipleProduct.addContentRequirement(i1.getProduct(), 3);
-		assertFalse(multipleProduct.isMeetingAlertRequirements(b));
+		assertFalse(multipleProduct.checkAlertConditions(b));
 		multipleProduct.addContentRequirement(i3.getProduct(), 45);
-		assertFalse(multipleProduct.isMeetingAlertRequirements(b));
+		assertFalse(multipleProduct.checkAlertConditions(b));
 		ContentAlert productNotPresent = new ContentAlert();
 		productNotPresent.addContentRequirement(i2.getProduct(), 1);
-		assertFalse(productNotPresent.isMeetingAlertRequirements(b));
+		assertFalse(productNotPresent.checkAlertConditions(b));
 
-		assertTrue(singleCategory.isMeetingAlertRequirements(b));
-		assertFalse(multipleCategories.isMeetingAlertRequirements(b));
+		assertTrue(singleCategory.checkAlertConditions(b));
+		assertFalse(multipleCategories.checkAlertConditions(b));
 	}
 }

@@ -23,9 +23,9 @@ public class AlertManager {
         alertHandlerStrategies.add(alertHandlerStrategy);
     }
 
-    public void alerts(Basket basket){
+    public void notifyChange(Basket basket){
         for(AlertHandlerStrategy handler : alertHandlerStrategies){
-            handler.isMeetingAlertRequirements(basket);
+            handler.checkAlertConditions(basket);
         }
     }
 }

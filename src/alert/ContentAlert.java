@@ -35,7 +35,7 @@ public class ContentAlert <T extends Alertable> implements AlertHandlerStrategy 
 	}
 
 	@Override
-	public boolean isMeetingAlertRequirements(Basket basket) {
+	public boolean checkAlertConditions(Basket basket) {
 		Iterator<Item> it = basket.getItemIterator();
 		HashMap<T, Integer> contentMeetingRequirements = new HashMap<>();
 

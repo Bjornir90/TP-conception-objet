@@ -40,6 +40,8 @@ public class Basket {
 
     public void addItem(Item i){
         items.add(i);
+        AlertManager alertManager = AlertManager.getInstance();
+        alertManager.notifyChange(this);
     }
 
     public Iterator<Item> getItemIterator(){
