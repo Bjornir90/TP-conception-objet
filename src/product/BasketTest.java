@@ -11,9 +11,9 @@ class BasketTest {
 	@org.junit.jupiter.api.BeforeEach
 	void setUp() {
 		basket = new Basket();
-		p1 = new Product(10, "Cahier");
-		p2 = new Product(1.5f, "Stylo");
-		p3 = new Product(249.99f, "Mémoire");
+		p1 = new Product(10, "Cahier", 5);
+		p2 = new Product(1.5f, "Stylo", 1);
+		p3 = new Product(249.99f, "Mémoire", 60);
 		i1 = new Item(p1);
 		i1.setQuantity(4);
 		i2 = new Item(p2);

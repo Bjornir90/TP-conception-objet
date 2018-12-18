@@ -34,6 +34,14 @@ public class ContentAlert <T extends Alertable> implements AlertHandlerStrategy 
 		}
 	}
 
+	protected void printAlert(){
+		String toPrint = "Le client a ajouté dans son panier :";
+		for(T currentRequirement : contentRequirements.keySet()){
+			toPrint += "\n "+currentRequirement.printableName()+" quantité : "+contentRequirements.get(currentRequirement);
+		}
+		System.out.println(toPrint);
+	}
+
 	@Override
 	public boolean checkAlertConditions(Basket basket) {
 		Iterator<Item> it = basket.getItemIterator();
@@ -68,6 +76,7 @@ public class ContentAlert <T extends Alertable> implements AlertHandlerStrategy 
 				return false;
 			}
 		}
+		printAlert();//TODO maybe delegate to caller ?
 		return true;
 	}
 }
