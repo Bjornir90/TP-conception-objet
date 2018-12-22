@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ContentAlertTest {
+class ContentAlertTest{
 
 	Basket b;
 	ArrayList<Product> products;
