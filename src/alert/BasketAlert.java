@@ -13,4 +13,9 @@ public class BasketAlert implements AlertHandlerStrategy {
     public boolean checkAlertConditions(Basket basket) {
         return (basket.calculateFinalPrice() >= threshold);
     }
+
+    @Override
+    public void fireAlert() {
+        System.out.println("Le client a acheté pour au moins "+threshold+"euros de produits");
+    }
 }
