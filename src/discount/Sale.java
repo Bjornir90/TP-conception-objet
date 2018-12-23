@@ -6,9 +6,14 @@ import product.Basket;
 public abstract class Sale {
 	protected DiscountLevel discountLevel;
 
-	public abstract void applyDiscount(Basket b);
-
-	boolean isUserEligible(User user) {
-		return user.isEligibleForDiscountLevel(discountLevel);
+	public boolean isUserEligible(User user) {
+		return discountLevel == DiscountLevel.ALLUSERS
+				|| user.isEligibleForDiscountLevel(discountLevel);
 	}
+
+	public boolean isApplicableToBasket(Basket b) {
+		return isUserEligible(b.user);
+	}
+
+	public abstract void applyDiscount(Basket b);
 }
