@@ -31,11 +31,13 @@ public class Basket {
 
     public float calculateFinalPrice(){
         SaleManager sm = SaleManager.getInstance();
+        for(Item i : items) i.resetApplicablePrice();
         sm.applyAllItemsDiscounts(this);
         applicablePrice = calculateBasePrice();
         sm.applyAllBasketDiscounts(this);
         return applicablePrice;
     }
+
 
     public void applyPercentageOnTotal(float percentage){
         applicablePrice -= applicablePrice*percentage;
