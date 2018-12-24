@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 public abstract class Client {
 	private ArrayList<DiscountLevel> eligibleDiscountLevel;
+	protected boolean hasLoyaltyCard;
 
 	protected Client(){
 		eligibleDiscountLevel = new ArrayList<>();
@@ -17,5 +18,9 @@ public abstract class Client {
 
 	protected void addDiscountLevel(DiscountLevel level){
 		eligibleDiscountLevel.add(level);
+	}
+
+	public boolean getHasLoyaltyCard(){
+		return hasLoyaltyCard;
 	}
 }

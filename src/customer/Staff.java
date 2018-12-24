@@ -13,5 +13,6 @@ public class Staff extends Client {
 		super();
 		addDiscountLevel(DiscountLevel.STAFF);
 		addDiscountLevel(DiscountLevel.GUEST);
+		hasLoyaltyCard = false;
 	}
 }

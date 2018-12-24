@@ -3,10 +3,10 @@ package discount;
 import product.Basket;
 import product.Product;
 
-public class FidelityCard {
+public class LoyaltyCard {
 	int fidelityPoints;
 
-	public FidelityCard(){
+	public LoyaltyCard(){
 
 	}
 

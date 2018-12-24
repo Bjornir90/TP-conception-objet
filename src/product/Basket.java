@@ -37,6 +37,13 @@ public class Basket {
         return applicablePrice;
     }
 
+    public void pay(){
+        float priceToPay = calculateFinalPrice();
+        for(Item item : items){
+
+        }
+    }
+
     public void applyPercentageOnTotal(float percentage){
         applicablePrice -= applicablePrice*percentage;
     }

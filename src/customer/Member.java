@@ -13,5 +13,6 @@ public class Member extends Client {
 		super();
 		addDiscountLevel(DiscountLevel.GUEST);
 		addDiscountLevel(DiscountLevel.MEMBER);
+		hasLoyaltyCard = true;
 	}
 }
