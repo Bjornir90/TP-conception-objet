@@ -34,13 +34,15 @@ public class Basket {
         sm.applyAllItemsDiscounts(this);
         applicablePrice = calculateBasePrice();
         sm.applyAllBasketDiscounts(this);
+        user.applyLoyaltyDiscount();
         return applicablePrice;
     }
 
     public void pay(){
         float priceToPay = calculateFinalPrice();
         for(Item item : items){
-
+            Product currentProduct = item.getProduct();
+            user.addLoyaltyPoints(currentProduct);
         }
     }
 
