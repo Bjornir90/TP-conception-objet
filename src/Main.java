@@ -77,7 +77,8 @@ public class Main {
         System.out.println("Prix sans être loggé de base :"+userLogin.basket.calculateBasePrice()+"\navec promotions :"+userLogin.basket.calculateFinalPrice());
         userLogin.login(Member.getInstance());
         System.out.println("Prix en étant membre :"+userLogin.basket.calculateFinalPrice());
-
+        userLogin.basket.pay();
+        userLogin.printLoyaltyPoints();
 
     }
 }

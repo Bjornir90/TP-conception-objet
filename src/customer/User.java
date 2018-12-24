@@ -44,5 +44,10 @@ public class User {
 		Item item = new Item(p, quantity);
 		basket.addItem(item);
 	}
+
+	//Only for demonstration purposes
+	public void printLoyaltyPoints(){
+		System.out.println("Nombre de points fidelité :"+card.getLoyaltyPoints());
+	}
 	
 }
