@@ -3,6 +3,7 @@ package customer;
 import discount.DiscountLevel;
 import discount.LoyaltyCard;
 import product.Basket;
+import product.Item;
 import product.Product;
 
 public class User {
@@ -37,6 +38,11 @@ public class User {
 		if(typeOfClient.getHasLoyaltyCard()){
 			card.addPoints(product);
 		}
+	}
+
+	public void addToBasket(Product p, int quantity){
+		Item item = new Item(p, quantity);
+		basket.addItem(item);
 	}
 	
 }

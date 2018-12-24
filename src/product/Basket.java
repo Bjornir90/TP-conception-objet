@@ -38,12 +38,13 @@ public class Basket {
         return applicablePrice;
     }
 
-    public void pay(){
+    public float pay(){
         float priceToPay = calculateFinalPrice();
         for(Item item : items){
             Product currentProduct = item.getProduct();
             user.addLoyaltyPoints(currentProduct);
         }
+        return priceToPay;
     }
 
     public void applyPercentageOnTotal(float percentage){

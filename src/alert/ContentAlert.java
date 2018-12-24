@@ -56,7 +56,6 @@ public class ContentAlert <T extends Alertable> implements AlertHandlerStrategy 
 				if (currentRequirement.isAlertedBy(currentProduct)) {
 					if (contentMeetingRequirements.containsKey(currentRequirement)) {
 						int oldQuantity = contentMeetingRequirements.get(currentRequirement);
-						System.out.println("oldQuantity = " + oldQuantity);
 						contentMeetingRequirements.replace(currentRequirement, oldQuantity+currentItem.getQuantity());
 					} else {
 						contentMeetingRequirements.put(currentRequirement, currentItem.getQuantity());
@@ -64,9 +63,6 @@ public class ContentAlert <T extends Alertable> implements AlertHandlerStrategy 
 				}
 			}
 		}
-
-		System.out.println("contentRequirements = " + contentRequirements);
-		System.out.println("contentMeetingRequirements = " + contentMeetingRequirements);
 
 		for(T currentRequirement : contentRequirements.keySet()){
 			if(contentMeetingRequirements.containsKey(currentRequirement)){
@@ -77,7 +73,6 @@ public class ContentAlert <T extends Alertable> implements AlertHandlerStrategy 
 				return false;
 			}
 		}
-		fireAlert();//TODO maybe delegate to caller ?
 		return true;
 	}
 }
