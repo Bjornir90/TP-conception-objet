@@ -5,8 +5,8 @@ import product.Basket;
 import java.util.ArrayList;
 
 public class SaleManager {
-	private ArrayList<Sale> itemDiscounts;
-	private ArrayList<Sale> basketDiscounts;
+	private ArrayList<ItemDiscount> itemDiscounts;
+	private ArrayList<BasketDiscount> basketDiscounts;
 	private static SaleManager instance;
 
 	public static SaleManager getInstance(){
@@ -21,11 +21,11 @@ public class SaleManager {
 		basketDiscounts = new ArrayList<>();
 	}
 
-	public void addItemSale(Sale sale){
+	public void addItemSale(ItemDiscount sale){
 		itemDiscounts.add(sale);
 	}
 
-	public void addBasketSale(Sale sale){
+	public void addBasketSale(BasketDiscount sale){
 		basketDiscounts.add(sale);
 	}
 

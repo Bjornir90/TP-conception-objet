@@ -16,6 +16,11 @@ public class Basket {
         items = new ArrayList<>();
     }
 
+    public Basket(User user) {
+        this();
+        this.user = user;
+    }
+
     public float calculateBasePrice(){
         float total = 0.0f;
         for(Item item : items){
@@ -53,7 +58,20 @@ public class Basket {
     @Override
     public String toString() {
         return "Basket{" +
-                "items=" + items +
+                items + ", \n" +
+                "basePrice=" + calculateBasePrice() + ", \n" +
+                "finalPrice=" + calculateFinalPrice() + ", \n" +
                 '}';
+    }
+
+    public Item getItem(Product p) {
+        for(Item item : items)
+            if(item.getProduct().equals(p)) return item;
+
+        return null;
+    }
+
+    public boolean has(Product p) {
+        return getItem(p) != null;
     }
 }
