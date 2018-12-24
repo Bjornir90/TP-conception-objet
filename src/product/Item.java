@@ -13,6 +13,9 @@ public class Item {
     public Item(Product product, int quantity) {
         this.product = product;
         this.quantity = quantity;
+    }
+
+    public void resetApplicablePrice() {
         applicablePrice = product.getBasePrice();
     }
 
